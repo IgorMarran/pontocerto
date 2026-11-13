@@ -1,0 +1,24 @@
+Global Solution 2026.2 - Cross-Platform Application Development (2º ano CC)
+App: PontoCerto
+
+Integrantes e responsabilidades
+-------------------------------
+
+1. Igor Mota Marran - RM567823
+   - Cliente da API Olho Vivo (src/services/olhovivo.ts): login com token,
+     cookie de sessão, nova tentativa em caso de 401 e tipos das respostas.
+   - Busca de pontos próximos (src/services/paradasProximas.ts).
+   - Telas "Perto de mim" e "Buscar".
+
+2. Murylo Silva Amaral - RM568241
+   - GPS com expo-location (src/context/LocalizacaoContext.tsx) e tratamento
+     das permissões (src/components/PermissaoGps.tsx).
+   - Tela da linha com mapa em tempo real e alerta "Desça no ponto certo"
+     (src/app/linha/[codigo].tsx).
+
+3. Dante Daher Garçon - RM567727
+   - Notificações locais, vibração e alertas (src/services/notificacoes.ts,
+     src/context/AlertasContext.tsx).
+   - Tela do ponto com previsão de chegada e criação de alertas
+     (src/app/parada/[codigo].tsx, src/components/ModalNovoAlerta.tsx).
+   - Tela "Alertas", README e gravação do vídeo.

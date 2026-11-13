@@ -1,56 +1,74 @@
-# Welcome to your Expo app 👋
+# PontoCerto
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+App em React Native (Expo) que usa a **API Olho Vivo da SPTrans**, o **GPS** e **notificações** para ajudar quem anda de ônibus em São Paulo.
 
-## Get started
+Global Solution 2026.2 · Cross-Platform Application Development
 
-1. Install dependencies
+**Vídeo:** _cole aqui o link do YouTube_
+
+## O que o app faz
+
+- **Perto de mim:** mostra os pontos de ônibus mais próximos, com distância, tempo a pé e os próximos ônibus de cada um.
+- **Buscar:** encontra linhas (número ou destino) e pontos (nome ou rua).
+- **Ponto:** previsão de chegada das linhas, atualizada a cada 30 segundos, com mapa dos ônibus a caminho.
+- **Linha:** mapa com o trajeto e os ônibus em tempo real.
+- **Alertas:**
+  - **Ônibus chegando:** avisa quando faltarem 3, 5 ou 10 minutos.
+  - **Hora de sair:** calcula pelo GPS o tempo de caminhada até o ponto e avisa a hora certa de sair.
+  - **Desça no ponto certo:** durante a viagem, vibra e avisa quando você estiver chegando ao ponto de descida.
+
+Os avisos usam notificação local, vibração e alerta na tela.
+
+## Como executar
+
+1. Gere um token na [área de desenvolvedores da SPTrans](https://www.sptrans.com.br/desenvolvedores/) (em **Meus Aplicativos**).
+2. Crie o arquivo `.env` na raiz do projeto:
+
+   ```bash
+   cp .env.example .env
+   ```
+
+   e coloque o token:
+
+   ```
+   EXPO_PUBLIC_OLHOVIVO_TOKEN=seu_token
+   ```
+
+3. Instale e rode (Node.js 20 ou superior):
 
    ```bash
    npm install
-   ```
-
-2. Start the app
-
-   ```bash
    npx expo start
    ```
 
-In the output, you'll find options to open the app in a
+4. Leia o QR Code com o app **Expo Go** no celular. Celular e computador precisam estar na mesma rede Wi-Fi; se não der, use `npx expo start --tunnel`.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## Tecnologias
 
-You can start developing by editing the files inside the **src/app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+Expo SDK 58, React Native, TypeScript, Expo Router, `expo-location`, `expo-notifications` e `react-native-maps`.
 
-## Get a fresh project
+## Estrutura
 
-When you're ready, run:
-
-```bash
-npm run reset-project
+```
+src/
+├── app/          telas (Perto de mim, Buscar, Alertas, Ponto, Linha)
+├── components/   componentes visuais
+├── context/      GPS e alertas
+├── hooks/        consulta com atualização automática
+├── services/     API Olho Vivo, pontos próximos e notificações
+└── utils/        distância e horários
 ```
 
-This command will move the starter code to the **example** directory and create a blank **src/app** directory where you can start developing.
+## Integrantes
 
-### Other setup steps
+| Nome | RM |
+| --- | --- |
+| Igor Mota Marran | 567823 |
+| Murylo Silva Amaral | 568241 |
+| Dante Daher Garçon | 567727 |
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+Divisão do trabalho: [`INTEGRANTES.txt`](INTEGRANTES.txt).
 
-## Learn more
+## Créditos
 
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Dados: **SPTrans – API Olho Vivo**.
