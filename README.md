@@ -4,7 +4,7 @@ App em React Native (Expo) que usa a **API Olho Vivo da SPTrans**, o **GPS** e *
 
 Global Solution 2026.2 · Cross-Platform Application Development
 
-**Vídeo:** _cole aqui o link do YouTube_
+**Vídeo:** https://youtube.com/shorts/uROTt2TMI5E
 
 ## O que o app faz
 

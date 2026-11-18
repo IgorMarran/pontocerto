@@ -9,6 +9,7 @@ Integrantes e responsabilidades
      cookie de sessão, nova tentativa em caso de 401 e tipos das respostas.
    - Busca de pontos próximos (src/services/paradasProximas.ts).
    - Telas "Perto de mim" e "Buscar".
+   - Gravação do vídeo.
 
 2. Murylo Silva Amaral - RM568241
    - GPS com expo-location (src/context/LocalizacaoContext.tsx) e tratamento
@@ -21,4 +22,4 @@ Integrantes e responsabilidades
      src/context/AlertasContext.tsx).
    - Tela do ponto com previsão de chegada e criação de alertas
      (src/app/parada/[codigo].tsx, src/components/ModalNovoAlerta.tsx).
-   - Tela "Alertas", README e gravação do vídeo.
+   - Tela "Alertas" e README.

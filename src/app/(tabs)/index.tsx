@@ -155,7 +155,7 @@ function ItemParada({ parada, previsao }: { parada: ParadaComDistancia; previsao
         <View key={linha.cl} style={estilos.linhaPrevisao}>
           <Letreiro texto={linha.c} />
           <View style={{ flex: 1 }}>
-            <Chegadas veiculos={linha.vs} horaConsulta={previsao!.hr} maximo={2} />
+            <Chegadas veiculos={linha.vs} horaConsulta={previsao?.hr ?? ''} maximo={2} />
           </View>
         </View>
       ))}

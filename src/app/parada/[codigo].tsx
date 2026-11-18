@@ -36,7 +36,9 @@ export default function TelaParada() {
       ? { latitude: Number(params.py), longitude: Number(params.px) }
       : null;
 
-  const linhas = [...(ponto?.l ?? [])].sort((a, b) => primeiraChegada(a, dados!.hr) - primeiraChegada(b, dados!.hr));
+  // Sem `dados!`: o React Compiler lê `dados.hr` antes de `dados` chegar e a tela quebra.
+  const hora = dados?.hr ?? '';
+  const linhas = [...(ponto?.l ?? [])].sort((a, b) => primeiraChegada(a, hora) - primeiraChegada(b, hora));
   const distancia = posicao && coord ? distanciaEmMetros(posicao, coord) : null;
 
   const alertaAtivo = (linha: LinhaPrevisao) =>
@@ -116,7 +118,7 @@ export default function TelaParada() {
         renderItem={({ item }) => (
           <ItemLinha
             linha={item}
-            horaConsulta={dados!.hr}
+            horaConsulta={hora}
             comAlerta={alertaAtivo(item)}
             onAlertar={() =>
               coord &&
